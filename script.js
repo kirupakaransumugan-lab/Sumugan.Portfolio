@@ -128,3 +128,30 @@ document.addEventListener('keydown', e => {
         document.body.classList.remove('modal-open');
     }
 });
+
+
+// ===== CONTACT FORM — Basic submit handling (no backend) =====
+// Paste into script.js
+
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const btn = contactForm.querySelector('.form-submit-btn');
+        const originalText = btn.textContent;
+
+        btn.textContent = 'Message Sent ✓';
+        btn.style.opacity = '0.8';
+
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.opacity = '1';
+            contactForm.reset();
+        }, 2200);
+
+        // TODO: replace this with an actual fetch() call to your
+        // backend / email service (e.g. Formspree, EmailJS) when ready.
+    });
+}
