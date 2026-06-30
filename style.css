@@ -108,7 +108,7 @@ a{
     min-height: calc(100vh - 90px);
     display:flex;
     align-items:center;
-    padding:100px 0 40px;
+    padding:160px 0 40px;
 }
 
 .hero .row{
@@ -145,8 +145,8 @@ a{
 
 .hero h1 span{
     background:linear-gradient(90deg,#ffd7e5,#ff0062);
-    -webkit-background-clip:text;
     background-clip:text;
+    -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
@@ -340,23 +340,14 @@ a{
     animation-play-state:paused;
 }
 
-
-
-/* abou section */
-
+/* about section  */
+/* ================= ABOUT SECTION ================= */
 
 .about {
     padding: 110px 0 80px;
     position: relative;
     overflow: hidden;
-
-    /* Matching the home section's dark + pink radial glow feel */
-    background:
-        radial-gradient(ellipse at bottom left, rgba(75,0,30,.55) 0%, transparent 55%),
-        radial-gradient(ellipse at top right,   rgba(120,0,50,.3)  0%, transparent 50%);
 }
-
-/* ---- Left card ---- */
 
 .about-card-wrap {
     position: relative;
@@ -364,7 +355,6 @@ a{
     justify-content: center;
 }
 
-/* Pink decorative blob behind the card */
 .about-blob {
     position: absolute;
     top: -30px;
@@ -386,7 +376,7 @@ a{
     box-shadow: 0 20px 60px rgba(0,0,0,.5);
     max-width: 420px;
     width: 100%;
-    height: 580px;          /* fixed tall height */
+    height: 580px;
 }
 
 .about-img-card img {
@@ -397,7 +387,6 @@ a{
     object-position: center top;
 }
 
-/* Quote overlay at bottom of image */
 .about-quote {
     position: absolute;
     bottom: 0;
@@ -422,8 +411,6 @@ a{
     color: #ff2d67;
 }
 
-/* ---- Right content ---- */
-
 .about-heading {
     font-size: 46px;
     font-weight: 800;
@@ -446,8 +433,6 @@ a{
     max-width: 580px;
 }
 
-/* ---- Info grid ---- */
-
 .about-info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -464,7 +449,6 @@ a{
     flex-direction: column;
     gap: 6px;
 
-    /* JS scroll-reveal starts hidden */
     opacity: 0;
     transform: translateY(20px);
     transition: opacity .5s ease, transform .5s ease;
@@ -493,130 +477,477 @@ a{
     color: #fff;
 }
 
-/* skill section */
-.skills-section{
-    width:100%;
-    padding:90px 8%;
-     background:#0a0a1b;
+  /* skilss */
+
+  .skills {
+    padding: 100px 0 80px;
+    position: relative;
+}
+ 
+/* Header */
+.skills-header {
+    margin-bottom: 55px;
+}
+ 
+.skills-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+ 
+.skills-tag span {
+    display: block;
+    width: 36px;
+    height: 2px;
+    background: #ff2d67;
+}
+ 
+.skills-tag p {
+    margin: 0;
+    color: #ff2d67;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+ 
+.skills-title {
+    font-size: 52px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+}
+ 
+/* Main card */
+.skills-card {
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,.06);
+    border-radius: 28px;
+    padding: 55px 50px 45px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.12);
+}
+ 
+/* Rings row */
+.skills-rings-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px 20px;
+}
+ 
+.skill-ring-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+ 
+    /* reveal starts hidden */
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .5s ease, transform .5s ease;
+}
+ 
+.skill-ring-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+ 
+/* SVG ring */
+.ring-wrap {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.ring-svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    transform: rotate(-90deg);   /* start from top */
+}
+ 
+/* Track circle */
+.ring-bg {
+    fill: none;
+    stroke: rgba(0,0,0,.08);
+    stroke-width: 8;
+}
+ 
+/* Progress arc */
+.ring-fill {
+    fill: none;
+    stroke: url(#ringGrad);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 314;       /* 2π × r(50) */
+    stroke-dashoffset: 314;      /* fully hidden initially */
+    transition: stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1);
+    filter: drop-shadow(0 0 6px rgba(255,0,80,.7));
+}
+ 
+/* Percentage label in center */
+.ring-pct {
+    position: relative;
+    z-index: 1;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #15101a;
+}
+ 
+/* Label below ring */
+.ring-label {
+    margin: 0;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    color: #6b6b6b;
+    text-align: center;
+}
+ 
+/* Divider */
+.skills-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(0,0,0,.08);
+    margin: 45px 0 35px;
+}
+ 
+/* Also proficient in */
+.skills-also {
+    text-align: center;
+}
+ 
+.also-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #9a9a9a;
+    margin-bottom: 20px;
+}
+ 
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+ 
+.skills-tags span {
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    background: rgba(0,0,0,.02);
+    cursor: default;
+    transition: .3s;
+}
+ 
+.skills-tags span:hover {
+    border-color: #ff2d67;
+    color: #ff2d67;
+    background: rgba(255,45,103,.06);
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
+/* Projects */
+
+/* ================= PROJECTS SECTION ================= */
+
+.projects {
+    padding: 100px 0 90px;
 }
 
-.section-title span{
-    color:#eb2550;
-    font-size:14px;
-    font-weight:700;
-    letter-spacing:3px;
+/* Header */
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
 }
 
-.section-title h2{
-    font-size:52px;
-    margin-top:15px;
-    color:#ffffff;
+.projects-title {
+    font-size: 50px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
 }
 
-.skills-card{
-    background:#ffffff;
-    border:1px solid #e5e7eb;
-    border-radius:25px;
-    padding:50px;
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
+.all-projects-link {
+    color: #9f9f9f;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: .3s;
 }
 
-.skill-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:40px;
-    text-align:center;
+.all-projects-link i {
+    font-size: 12px;
+    transition: .3s;
 }
 
-.circle{
-    position:relative;
-    width:140px;
-    height:140px;
-    margin:auto;
+.all-projects-link:hover {
+    color: #ff2d67;
 }
 
-.circle svg{
-    width:140px;
-    height:140px;
-    transform:rotate(-90deg);
+.all-projects-link:hover i {
+    transform: translate(3px, -3px);
 }
 
-circle{
-    fill:none;
-    stroke-width:10;
+/* Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
 }
 
-.bg{
-    stroke:#d1d5db;
+/* Card (shared by design + dev cards) */
+.project-card {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+    cursor: pointer;
+    display: block;
+    color: inherit;
 }
 
-.progress{
-    stroke:#eb2550;
-    stroke-linecap:round;
-    stroke-dasharray:364;
-    stroke-dashoffset:364;
-    transition:1.5s;
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255,45,103,.35);
+    box-shadow: 0 20px 50px rgba(0,0,0,.45);
+    color: inherit;
 }
 
-.number{
-    position:absolute;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:30px;
-    font-weight:700;
-    color:#111827;
+/* Dev cards are <a> tags — slightly different accent on hover */
+.project-card-dev:hover {
+    border-color: rgba(120,180,255,.35);
 }
 
-.skill h4{
-    margin-top:20px;
-    color:#374151;
-    font-size:15px;
-    letter-spacing:1px;
+/* Image area */
+.project-img {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
 }
 
-.skills-card hr{
-    margin:50px 0 35px;
-    border:none;
-    border-top:1px solid #e5e7eb;
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
 }
 
-.skills-card h5{
-    text-align:center;
-    color:#6b7280;
-    letter-spacing:2px;
-    margin-bottom:30px;
+.project-card:hover .project-img img {
+    transform: scale(1.08);
 }
 
-.tags{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
+/* Category tag pill on image */
+.project-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+
+    background: linear-gradient(135deg, #ff4d8d, #ff004f);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    border-radius: 50px;
 }
 
-.tags span{
-    padding:10px 22px;
-    border:1px solid #d1d5db;
-    border-radius:50px;
-    color:#374151;
-    font-size:14px;
-    transition:.3s;
-    cursor:pointer;
+/* Icon top right — expand for design, github for dev */
+.project-link {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,0,80,.9);
+    color: #fff;
+    font-size: 13px;
+    transition: .3s;
 }
 
-.tags span:hover{
-    background:#eb2550;
-    color:#fff;
-    border-color:#eb2550;
-    transform:translateY(-4px);
+.project-card-dev .project-link {
+    background: rgba(20,20,30,.85);
 }
+
+.project-link:hover {
+    background: #fff;
+    color: #ff004f;
+}
+
+.project-card-dev .project-link:hover {
+    color: #15101a;
+}
+
+/* Info area */
+.project-info {
+    padding: 26px 26px 28px;
+}
+
+.project-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.project-info p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #9a9a9a;
+    margin-bottom: 18px;
+}
+
+.project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-tools span {
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 50px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ccc;
+    background: rgba(255,255,255,.03);
+}
+
+/* ================= DESIGN MODAL (lightbox) ================= */
+
+.design-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.design-modal.open {
+    display: flex;
+}
+
+.design-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5,3,8,.88);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.design-modal-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    max-height: 88vh;
+    overflow-y: auto;
+
+    background: #15101a;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 22px;
+    padding: 26px;
+
+    animation: modalPop .35s ease;
+}
+
+@keyframes modalPop {
+    from { opacity: 0; transform: scale(.94) translateY(15px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.design-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 2;
+
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.design-modal-close:hover {
+    background: #ff004f;
+    transform: rotate(90deg);
+}
+
+/* Gallery — stacked full images, scrollable */
+.design-modal-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.design-modal-gallery img {
+    width: 100%;
+    border-radius: 14px;
+    display: block;
+}
+
+.design-modal-info h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.design-modal-info p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #9a9a9a;
+}
+
+/* Lock body scroll when modal open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Safety: ensure extra gallery images never show inside the card itself */
+.gallery-img {
+    display: none !important;
+}
+
+
+
+
+
 
 
 
@@ -631,20 +962,18 @@ circle{
 
 /* Responsive */
 
+@media (max-width: 991px) {
+    .skills-title { font-size: 38px; }
+    .skills-card  { padding: 40px 30px 35px; }
+    .ring-wrap    { width: 110px; height: 110px; }
+    .ring-pct     { font-size: 18px; }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Responsive */
-
+@media (max-width: 576px) {
+    .skills { padding: 70px 0 60px; }
+    .skills-title { font-size: 30px; }
+    .skills-card  { padding: 30px 20px 28px; }
+    .skills-rings-row { gap: 24px 16px; }
+    .ring-wrap    { width: 96px; height: 96px; }
+    .ring-pct     { font-size: 16px; }
+}
