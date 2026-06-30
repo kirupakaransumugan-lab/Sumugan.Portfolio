@@ -1032,7 +1032,7 @@ body.modal-open {
     gap: 14px;
 }
 
-.contact-socials a {
+/* .contact-socials a {
     width: 44px;
     height: 44px;
     display: flex;
@@ -1049,7 +1049,7 @@ body.modal-open {
 .contact-socials a:hover {
     background: #ff004f;
     transform: translateY(-3px);
-}
+} */
 
 /* Form card */
 .contact-form-card {
@@ -1178,5 +1178,70 @@ body.modal-open {
     background: #ff004f;
     color: #fff;
     transform: translateY(-3px);
+}
+ /* ---------- MEDIUM / TABLET (≥768px) ---------- */
+@media (min-width: 768px){
+ 
+    .hire-btn{
+        display: inline-block;
+    }
+ 
+    .hero h1{
+        font-size: 64px;
+    }
+ 
+    .hero-text{
+        margin-left: 0;
+        margin-right: 0;
+    }
+ 
+    .hero-tag{
+        justify-content: flex-start;
+    }
+ 
+    .hero{
+        text-align: left;
+    }
+ 
+    .hero-stats{
+        justify-content: flex-start;
+    }
+ 
+    .about{
+        text-align: left;
+    }
+ 
+    .about-text{
+        margin-left: 0;
+    }
+ 
+    .about-info-grid{
+        text-align: left;
+    }
+ 
+    .contact{
+        text-align: left;
+    }
+ 
+    .contact-text{
+        margin-left: 0;
+    }
+ 
+    .skills-title{
+        font-size: 38px;
+    }
+ 
+    .projects-title{
+        font-size: 38px;
+    }
+ 
+    .contact-heading{
+        font-size: 34px;
+    }
+ 
+    .footer-row{
+        flex-direction: row;
+        text-align: left;
+    }
 }
  
