@@ -86,6 +86,9 @@ a{
 .nav-link:hover,
 .nav-link.active{
     color:#fff;
+    border-radius: 10px;
+    background:linear-gradient(135deg,#ff4d8d,#ff004f);
+
 }
 
 .hire-btn{
@@ -478,182 +481,191 @@ a{
 }
 
   /* skilss */
+  
 
-  .skills {
-    padding: 100px 0 80px;
-    position: relative;
+  .skills-section{
+    padding:100px 0;
 }
- 
-/* Header */
-.skills-header {
-    margin-bottom: 55px;
+
+.section-tag{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:15px;
 }
- 
-.skills-tag {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    margin-bottom: 16px;
+
+.section-tag span{
+    width:50px;
+    height:2px;
+    background:#ff296d;
 }
- 
-.skills-tag span {
-    display: block;
-    width: 36px;
-    height: 2px;
-    background: #ff2d67;
+
+.section-tag p{
+    margin:0;
+    color:#ff296d;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:3px;
 }
- 
-.skills-tag p {
-    margin: 0;
-    color: #ff2d67;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
+
+.section-title{
+    color:#fff;
+    font-size:48px;
+    font-weight:700;
 }
- 
-.skills-title {
-    font-size: 52px;
-    font-weight: 800;
-    color: #fff;
-    margin: 0;
+
+.skills-card{
+
+    background:#e9e9e9;
+    border-radius:30px;
+    padding:50px;
 }
- 
-/* Main card */
-.skills-card {
-    background: #ffffff;
-    border: 1px solid rgba(0,0,0,.06);
-    border-radius: 28px;
-    padding: 55px 50px 45px;
-    box-shadow: 0 20px 60px rgba(0,0,0,.12);
+
+.skill-box{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:25px 28px;
+
+    background:#f8f9fb;
+    border:1px solid #d9dde3;
+    border-radius:18px;
+
+    transition:.3s;
 }
- 
-/* Rings row */
-.skills-rings-row {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 30px 20px;
+.skill-box:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#ff296d;
+
+    box-shadow:0 10px 30px rgba(255,41,109,.12);
+
 }
- 
-.skill-ring-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
- 
-    /* reveal starts hidden */
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity .5s ease, transform .5s ease;
+
+.skill-box h5{
+
+    font-size:26px;
+    font-weight:700;
+    color:#202124;
+    margin-bottom:8px;
 }
- 
-.skill-ring-item.visible {
-    opacity: 1;
-    transform: translateY(0);
+
+.skill-box small{
+
+    font-size:16px;
+    color:#5f6368;
+    font-weight:500;
 }
- 
-/* SVG ring */
-.ring-wrap {
-    position: relative;
-    width: 130px;
-    height: 130px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.badge{
+
+    padding:12px 22px;
+    font-size:15px;
+    font-weight:600;
+    border-radius:30px;
 }
- 
-.ring-svg {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    transform: rotate(-90deg);   /* start from top */
+
+.expert{
+
+    background:#ff296d;
 }
- 
-/* Track circle */
-.ring-bg {
-    fill: none;
-    stroke: rgba(0,0,0,.08);
-    stroke-width: 8;
+
+.advanced{
+
+    background:#ff7a00;
 }
- 
-/* Progress arc */
-.ring-fill {
-    fill: none;
-    stroke: url(#ringGrad);
-    stroke-width: 8;
-    stroke-linecap: round;
-    stroke-dasharray: 314;       /* 2π × r(50) */
-    stroke-dashoffset: 314;      /* fully hidden initially */
-    transition: stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1);
-    filter: drop-shadow(0 0 6px rgba(255,0,80,.7));
+
+.intermediate{
+
+    background:#f1b300;
 }
- 
-/* Percentage label in center */
-.ring-pct {
-    position: relative;
-    z-index: 1;
-    font-family: 'Exo 2', sans-serif;
-    font-size: 22px;
-    font-weight: 800;
-    color: #15101a;
+
+.beginner{
+
+    background:#6c757d;
 }
- 
-/* Label below ring */
-.ring-label {
-    margin: 0;
-    font-size: 11.5px;
-    font-weight: 700;
-    letter-spacing: 1.8px;
-    color: #6b6b6b;
-    text-align: center;
+
+.tools-title{
+
+    text-align:center;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:2px;
+    color:#202124;
+    margin:45px 0 30px;
 }
- 
-/* Divider */
-.skills-divider {
-    width: 100%;
-    height: 1px;
-    background: rgba(0,0,0,.08);
-    margin: 45px 0 35px;
+
+.tool-tags{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
 }
- 
-/* Also proficient in */
-.skills-also {
-    text-align: center;
+
+.tool-tags span{
+
+    padding:12px 24px;
+
+    background:#e9ecef;
+
+    color:#202124;
+
+    border:1px solid #cfd4da;
+
+    border-radius:50px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
 }
- 
-.also-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    color: #9a9a9a;
-    margin-bottom: 20px;
+
+.tool-tags span:hover{
+
+    background:#ff296d;
+
+    color:#fff;
+
+    border-color:#ff296d;
+
+    transform:translateY(-4px);
 }
- 
-.skills-tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+
+.tool-tags i{
+
+    margin-right:6px;
 }
- 
-.skills-tags span {
-    border: 1px solid rgba(0,0,0,.12);
-    border-radius: 50px;
-    padding: 8px 20px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #333;
-    background: rgba(0,0,0,.02);
-    cursor: default;
-    transition: .3s;
+
+@media(max-width:768px){
+
+.section-title{
+
+    font-size:34px;
 }
- 
-.skills-tags span:hover {
-    border-color: #ff2d67;
-    color: #ff2d67;
-    background: rgba(255,45,103,.06);
+
+.skills-card{
+
+    padding:30px 20px;
+}
+
+.skill-box{
+
+    flex-direction:column;
+
+    gap:15px;
+
+    text-align:center;
+}
+
 }
 
 /* Projects */
