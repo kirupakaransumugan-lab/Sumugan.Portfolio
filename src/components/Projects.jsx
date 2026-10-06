@@ -8,12 +8,12 @@ const GROUPS = [
     { id: 'dev', title: 'DEVELOPMENT', projects: devProjects },
 ];
 
-function ProjectBody({ project, icon }) {
+function ProjectBody({ project, icon, children }) {
     return (
         <>
             <div className="project-img">
                 <span className="project-tag">{project.tag}</span>
-                <span className="project-link"><i className={icon}></i></span>
+                <span className="project-link" aria-hidden="true"><i className={icon}></i></span>
                 <img src={project.images[0]} alt={project.title} />
             </div>
             <div className="project-info">
@@ -28,22 +28,43 @@ function ProjectBody({ project, icon }) {
                 <div className="project-tools">
                     {project.tools.map(tool => <span key={tool}>{tool}</span>)}
                 </div>
+                {children}
             </div>
         </>
     );
 }
 
-// Dev projects (with an href) link to GitHub; design projects open the gallery modal.
+// Dev cards hold two links, and <a> can't nest, so the card is an <article> whose
+// first link "stretches" over the whole card (see .stretched-link in CSS). That link
+// is the live demo when there is one, otherwise the GitHub repo.
+function DevCard({ project, style }) {
+    const { title, demo, href } = project;
+
+    return (
+        <article className="project-card project-card-dev" style={style}>
+            <ProjectBody project={project} icon={demo ? 'fa-solid fa-arrow-up-right-from-square' : 'fa-brands fa-github'}>
+                <div className="project-actions">
+                    {demo && (
+                        <a href={demo} target="_blank" rel="noreferrer" className="project-action is-primary stretched-link"
+                           aria-label={`${title} live demo`}>
+                            Live Demo <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    )}
+                    <a href={href} target="_blank" rel="noreferrer" className={`project-action${demo ? '' : ' stretched-link'}`}
+                       aria-label={`${title} source code on GitHub`}>
+                        <i className="fa-brands fa-github"></i> Code
+                    </a>
+                </div>
+            </ProjectBody>
+        </article>
+    );
+}
+
+// Dev projects (with an href) link out; design projects open the gallery modal.
 function ProjectCard({ project, index, onOpenDesign }) {
     const style = { '--i': index };
 
-    if (project.href) {
-        return (
-            <a href={project.href} target="_blank" rel="noreferrer" className="project-card project-card-dev" style={style}>
-                <ProjectBody project={project} icon="fa-brands fa-github" />
-            </a>
-        );
-    }
+    if (project.href) return <DevCard project={project} style={style} />;
 
     return (
         <div className="project-card" style={style} onClick={() => onOpenDesign(project)}>

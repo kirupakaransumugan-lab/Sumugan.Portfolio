@@ -1322,13 +1322,14 @@ body.modal-open {
     color:#fff;
 }
 
-/* Keyboard flipped horizontally, bleeding off the left edge at an angle */
+/* Keyboard bleeding off the left edge at an angle.
+   No scaleX(-1) here: the PNG already reads correctly, and flipping it mirrors the keycaps. */
 .showcase-keyboard{
     position:absolute;
     top:50%;
     left:-20%;
     width:min(1100px,72vw);
-    transform:translateY(-50%) rotate(-12deg) scaleX(-1);
+    transform:translateY(-50%) rotate(-12deg);
     transform-origin:center;
     filter:drop-shadow(0 30px 40px rgba(0,0,0,.6));
     pointer-events:none;
@@ -1362,7 +1363,7 @@ body.modal-open {
         position:relative;
         top:auto;
         right:auto;
-        transform:rotate(-10deg) scaleX(-1);
+        transform:rotate(-10deg);
         width:130%;
         margin:60px 0 30px -38%;
     }
@@ -2171,4 +2172,71 @@ body.modal-open {
 .built-with img{
     width:20px;
     height:20px;
+}
+
+
+/* ================= SCROLL OFFSET FOR THE FIXED NAVBAR =================
+   The navbar is position:fixed and ends ~120px from the top (20px offset + padding + logo).
+   Anchor jumps (#projects etc.) and scrollIntoView stop this far below the top instead,
+   so section headings land under the bar rather than behind it. */
+:root{ --nav-offset:140px; }
+
+section[id],
+.folder-group{
+    scroll-margin-top:var(--nav-offset);
+}
+
+@media(max-width:991px){
+    :root{ --nav-offset:110px; }
+}
+
+/* ================= DEV CARD ACTIONS (Live Demo / Code) ================= */
+
+/* Containing block for Bootstrap's .stretched-link::after, which covers the whole card */
+.project-card-dev{ position:relative; }
+
+/* Decorations on the image would sit above the stretched overlay and swallow clicks */
+.project-card-dev .project-tag,
+.project-card-dev .project-link{ pointer-events:none; }
+
+.project-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:20px;
+}
+
+.project-action{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 18px;
+    border-radius:50px;
+    border:1px solid rgba(255,255,255,.2);
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.5px;
+    transition:.3s;
+}
+
+.project-action i{ font-size:12px; }
+
+.project-action.is-primary{
+    background:#fff;
+    border-color:#fff;
+    color:var(--ink);
+}
+
+/* The non-stretched link must sit above the overlay to stay clickable on its own */
+.project-action:not(.stretched-link){
+    position:relative;
+    z-index:2;
+}
+
+.project-action:hover,
+.project-action:focus-visible{
+    background:var(--blue);
+    border-color:var(--blue);
+    color:#fff;
 }

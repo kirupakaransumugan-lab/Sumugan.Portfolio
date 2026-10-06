@@ -10,7 +10,7 @@ export const navLinks = ['home', 'about', 'skills', 'projects', 'contact'];
 
 export const heroStats = [
     { value: '10+', label: 'PROJECTS DONE', icon: 'fa-regular fa-folder' },
-    { value: '6+', label: 'MONTHS EXP.', icon: 'fa-regular fa-clock' },
+    { value: '3', label: 'LIVE APPS', icon: 'fa-solid fa-globe' },
     { value: '5+', label: 'HAPPY CLIENTS', icon: 'fa-solid fa-user-group' },
 ];
 
@@ -23,14 +23,8 @@ export const aboutInfo = [
     { label: 'EXPERIENCE', value: '6+ Months' },
 ];
 
-// Skills section — stat chips + grouped tool cards.
+// Skills section — grouped tool cards (the stat chips are at the bottom of this file).
 // A tool shows either a Font Awesome `icon` or a short text `mark` (for brands FA doesn't include).
-export const skillStats = [
-    { value: '10+', label: 'Technologies', icon: 'fa-solid fa-code', color: '#3b8bff' },
-    { value: '5+', label: 'Core Skills', icon: 'fa-solid fa-layer-group', color: '#22c55e' },
-    { value: '100%', label: 'Always Learning', icon: 'fa-regular fa-heart', color: '#ec4899' },
-];
-
 export const skillGroups = [
     {
         title: 'Frontend Development',
@@ -122,20 +116,20 @@ export const designProjects = [
     {
         title: 'Creative Flyers',
         tag: 'CREATIVE POSTERS',
-        description: 'Modern flyers designs created using Adobe Photoshop with a focus on creativity, branding, and visual communication.',
+        description: 'Two self-promo pieces for my own page: an astronaut working on a laptop with the Ps and Ai icons floating beside him, and a Greek statue in purple drapery so "Think Different" reads classical instead of cliché. Plus a biryani flyer where a crowned rooster chef and a gold arch sell "Taste the Royalty" before you read a word.',
         tools: ['Flyers'],
         images: ['/Assets/poster 4 astro.jpg', '/Assets/popster 3.jpg', '/Assets/poster 2.jpg'],
     },
     {
         title: 'Posters',
         tag: 'POSTERS',
-        description: 'Modern poster designs created using Adobe Photoshop with a focus on creativity, branding, and visual communication.',
+        description: 'Launch ads for Qurix, a CNC studio in Thellipalai, Jaffna, announcing their first lighting and cutting products. I kept one layout for both so they read as a series and changed only the mood: a glowing red lamp, then clean white cut-work on brown. Plus a Jana Nayagan fan poster, graded warm to match the film.',
         tools: ['Type Design'],
         images: ['/Assets/quric cnc light.jpg', '/Assets/qurix cnc cut.jpg', '/Assets/Dramatic Background.jpg'],
     },
 ];
 
-// Dev projects link straight to GitHub.
+// Dev projects link to GitHub (`href`) and, when deployed, a live `demo`.
 export const devProjects = [
     {
         title: 'NallaBid',
@@ -144,6 +138,7 @@ export const devProjects = [
         tools: ['React', 'FastAPI', 'MySQL', 'Bootstrap'],
         images: ['/Assets/nallabid.jpg'],
         href: 'https://github.com/kirupakaransumugan-lab/NallaBid_team_lethimcook.git',
+        demo: 'https://nallabid.vercel.app/',
     },
     {
         title: 'Lucky Companion',
@@ -152,6 +147,7 @@ export const devProjects = [
         tools: ['Electron', 'React', 'Vite'],
         images: ['/Assets/lucky-companion.jpg'],
         href: 'https://github.com/kirupakaransumugan-lab/LuckyCompanion_V1.git',
+        demo: 'https://lucky-companion-v1.vercel.app/',
         builtWith: { name: 'Claude', logo: '/Assets/claude-logo.png' },
     },
     {
@@ -161,6 +157,7 @@ export const devProjects = [
         tools: ['React', 'FastAPI', 'MySQL', 'JWT'],
         images: ['/Assets/namma-kitchen.jpg'],
         href: 'https://github.com/kirupakaransumugan-lab/nammakitchen_foodordering.git',
+        demo: 'https://nammakitchen-foodordering.vercel.app/',
     },
     {
         title: 'Spotify Clone UI',
@@ -186,6 +183,13 @@ export const devProjects = [
         images: ['/Assets/hand-mouse.jpg'],
         href: 'https://github.com/kirupakaransumugan-lab/Sumugan.Portfolio.git',
     },
+];
+
+// Skills stat chips. Declared after the project lists so the count stays in sync with them.
+export const skillStats = [
+    { value: '10+', label: 'Technologies', icon: 'fa-solid fa-code', color: '#3b8bff' },
+    { value: '5+', label: 'Core Skills', icon: 'fa-solid fa-layer-group', color: '#22c55e' },
+    { value: String(designProjects.length + devProjects.length), label: 'Projects Shipped', icon: 'fa-solid fa-rocket', color: '#ec4899' },
 ];
 
 export const contactInfo = [

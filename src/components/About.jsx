@@ -57,7 +57,7 @@ export default function About() {
 
                         <p className="about-text">
                             I'm Sumugan, a graphic designer and front-end developer based in Jaffna.
-                            With over 6 Months of experience, I bridge the gap between pixel-perfect
+                            With over 6 months of experience, I bridge the gap between pixel-perfect
                             design and production-ready code.
                         </p>
 
