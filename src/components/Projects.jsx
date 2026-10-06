@@ -18,6 +18,12 @@ function ProjectBody({ project, icon }) {
             </div>
             <div className="project-info">
                 <h3>{project.title}</h3>
+                {project.builtWith && (
+                    <span className="built-with">
+                        <img src={project.builtWith.logo} alt="" />
+                        Built with {project.builtWith.name}
+                    </span>
+                )}
                 <p>{project.description}</p>
                 <div className="project-tools">
                     {project.tools.map(tool => <span key={tool}>{tool}</span>)}

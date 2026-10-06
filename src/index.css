@@ -1322,13 +1322,13 @@ body.modal-open {
     color:#fff;
 }
 
-/* Keyboard bleeds off the left edge, tilted at an angle */
+/* Keyboard flipped horizontally, bleeding off the left edge at an angle */
 .showcase-keyboard{
     position:absolute;
     top:50%;
     left:-20%;
     width:min(1100px,72vw);
-    transform:translateY(-50%) rotate(-12deg);
+    transform:translateY(-50%) rotate(-12deg) scaleX(-1);
     transform-origin:center;
     filter:drop-shadow(0 30px 40px rgba(0,0,0,.6));
     pointer-events:none;
@@ -1362,7 +1362,7 @@ body.modal-open {
         position:relative;
         top:auto;
         right:auto;
-        transform:rotate(-10deg);
+        transform:rotate(-10deg) scaleX(-1);
         width:130%;
         margin:60px 0 30px -38%;
     }
@@ -1775,7 +1775,6 @@ body.modal-open {
     border-radius:50%;
 }
 
-.dot-blue{ background:var(--blue); box-shadow:0 0 8px var(--blue); }
 
 .dot-green{
     background:#2ee66b;
@@ -2151,4 +2150,25 @@ body.modal-open {
     .skill-stat{ flex:1 1 160px; }
     .skill-tools{ flex-wrap:wrap; }
     .skill-tool{ flex:1 1 72px; }
+}
+
+/* "Built with Claude" badge on project cards */
+.built-with{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin:-4px 0 14px;
+    padding:5px 12px 5px 6px;
+    border-radius:50px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.5px;
+    color:#f0a58a;
+    background:rgba(217,119,87,.12);
+    border:1px solid rgba(217,119,87,.4);
+}
+
+.built-with img{
+    width:20px;
+    height:20px;
 }

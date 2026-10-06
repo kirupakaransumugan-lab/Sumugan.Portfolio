@@ -6,6 +6,9 @@ const PAPER_POSES = [
     { x: '-14%', y: '6%', r: '-8deg' },
     { x: '14%', y: '4%', r: '7deg' },
     { x: '0%', y: '0%', r: '-1deg' },
+    { x: '6%', y: '-3%', r: '3deg' },
+    { x: '-6%', y: '-2%', r: '-4deg' },
+    { x: '10%', y: '2%', r: '5deg' },
 ];
 
 export default function ProjectFolder({ title, projects, opening, onOpen, onOpened }) {

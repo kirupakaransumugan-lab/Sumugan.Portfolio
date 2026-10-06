@@ -67,7 +67,6 @@ export default function Hero() {
                             <img src="/Assets/profile.jpg?v=3" className="img-fluid hero-photo" alt="Sumugan" />
 
                             <div className="available">
-                                <span className="dot dot-blue"></span>
                                 AVAILABLE FOR WORK
                                 <span className="dot dot-green"></span>
                             </div>

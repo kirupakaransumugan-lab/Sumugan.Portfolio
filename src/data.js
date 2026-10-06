@@ -138,6 +138,31 @@ export const designProjects = [
 // Dev projects link straight to GitHub.
 export const devProjects = [
     {
+        title: 'NallaBid',
+        tag: 'TEAM PROJECT',
+        description: 'A smart procurement platform that connects Buyers and Suppliers in one transparent network. Suppliers manage a product catalogue with CSV import, while a React frontend talks to a FastAPI + MySQL backend secured with JWT authentication and Argon2 password hashing.',
+        tools: ['React', 'FastAPI', 'MySQL', 'Bootstrap'],
+        images: ['/Assets/nallabid.jpg'],
+        href: 'https://github.com/kirupakaransumugan-lab/NallaBid_team_lethimcook.git',
+    },
+    {
+        title: 'Lucky Companion',
+        tag: 'DESKTOP APP',
+        description: 'A tiny animated charm that hangs on your Windows desktop. Pick a charm on the website, press "Put it on my desktop", and a custom luckycompanion:// link launches a transparent, always-on-top Electron app where the charm sways and can be flicked.',
+        tools: ['Electron', 'React', 'Vite'],
+        images: ['/Assets/lucky-companion.jpg'],
+        href: 'https://github.com/kirupakaransumugan-lab/LuckyCompanion_V1.git',
+        builtWith: { name: 'Claude', logo: '/Assets/claude-logo.png' },
+    },
+    {
+        title: 'Namma Kitchen',
+        tag: 'FULL-STACK',
+        description: 'A single-restaurant food ordering platform with separate Admin, Restaurant Owner and Customer roles. React + Vite frontend, FastAPI backend with a MySQL database, secured with JWT login, Argon2 password hashing and role-based access.',
+        tools: ['React', 'FastAPI', 'MySQL', 'JWT'],
+        images: ['/Assets/namma-kitchen.jpg'],
+        href: 'https://github.com/kirupakaransumugan-lab/nammakitchen_foodordering.git',
+    },
+    {
         title: 'Spotify Clone UI',
         tag: 'UI/UX DESIGN',
         description: 'Energy song paly page  with a dark-mode design system and complex data visualisation components.',
@@ -158,7 +183,7 @@ export const devProjects = [
         tag: 'DEVELOPMENT',
         description: 'Responsive Hand Gesture Mouse Controller is a Python-based computer vision project that lets users control the mouse cursor using hand gestures captured through a webcam. The system uses OpenCV for camera input, MediaPipe for hand tracking, and PyAutoGUI for mouse control. The index finger moves the cursor, while a thumb-index pinch performs a click. This project demonstrates real-time hand tracking, gesture recognition, and human-computer interaction.',
         tools: ['Python', 'Open CV', 'Media Pipe', 'PyAutoGUI'],
-        images: ['/Assets/my.png'],
+        images: ['/Assets/hand-mouse.jpg'],
         href: 'https://github.com/kirupakaransumugan-lab/Sumugan.Portfolio.git',
     },
 ];
